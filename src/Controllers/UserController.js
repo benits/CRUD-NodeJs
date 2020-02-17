@@ -2,9 +2,15 @@ const users = [
   {
     id: 1,
     name: "Matheus Benites",
-    email: "Matheus@matheus.com.br"
+    email: "matheus@matheus.com.br"
+  },
+  {
+    id: 2,
+    name: "Ana Caroline",
+    email: "ana@ana.com.br"
   }
 ];
+
 
 function anyUser(name, email) {
   let index = users.findIndex(item => item.email == email);
@@ -112,5 +118,16 @@ module.exports = {
       console.log(ex);
       throw ex;
     }
+  },
+  checkUserExists(req, res, next) {
+    if(!req.body.name) {
+      return res.status(400).json({ error: "User name is required" })
+    }
+    if(!req.body.email) {
+      return res.status(400).json({ error: "Email is required" })
+    }
+  
+    return next();
   }
+  
 };
