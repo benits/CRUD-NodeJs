@@ -26,7 +26,6 @@ Na raiz deste projeto, rode:
 ```
 
 
-**O CORS da API está configurado para receber requisições de localhost:3000**
 
 
 
