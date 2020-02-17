@@ -1,14 +1,48 @@
-# CRUD-NodeJs
+# API CRUD-NodeJs
 
-**CRUD feito em Node, utilizando Array de Objetos.** Api desenvolvidade para fins didaticos.
+**API CRUD feito em Node, utilizando Array de Objetos.** Api desenvolvidade para fins didaticos.
 
 # Funcionalidades
 
-* Listagem de Usuarios
-* Buscar usuario por ID
-* Criar um novo Usuario
-* Update em um Usuario
-* Deletar um Usuario
+* **Get Users**
+```
+> GET http://localhost:3000/users/
+- Lista todos os usuarios cadastrados no Array.
+```
+
+* **Get User By ID**
+```
+> GET http://localhost:3000/user/id/{Id User}
+- Lista o usuario cadastrados no Array pelo ID.
+```
+
+* **Post new User**
+```
+> POST http://localhost:3000/user/
+> Body: 
+{
+	"name": "User Name",
+	"email": "email@email.com.br"
+};
+- Cadastras um novo usuário no Array.
+```
+
+* **Update em um Usuario**
+```
+> PUT http://localhost:3000/user/{Indice do Objeto no array}
+> Body: 
+{
+	"name": "User Name",
+	"email": "email@email.com.br"
+};
+- Update User.
+```
+
+* **Deletar um Usuario**
+```
+> DELETE http://localhost:3000/user/{Id User}
+- Deleta Usuario do Array pelo ID.
+```
 
 # A API
 
@@ -16,6 +50,13 @@
 Você deve instalar os seguintes pacotes antes de prosseguir:
 
 ```yarn```
+
+# Dependências do Projeto
+
+```
+> Nodemon
+> Express
+```
 
 # Executando o servidor da API
 
